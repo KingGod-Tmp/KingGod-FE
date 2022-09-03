@@ -10,7 +10,6 @@ type GreetingsProps = {
 };
 
 const StageTile = ({ tile }: GreetingsProps) => {
-  console.log(typeof tile);
   return (
     <StageTileBox>
       {typeof tile == "number" ? (

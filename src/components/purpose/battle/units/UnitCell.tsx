@@ -25,6 +25,9 @@ const UnitCellBox = styled(FlexColumnDiv)`
   width: 50px;
   height: 50px;
   margin: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default UnitCell;

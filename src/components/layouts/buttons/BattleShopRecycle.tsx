@@ -10,7 +10,7 @@ const BattleShopRecycle = () => {
 
 
   return (
-    <div onClick={ClickToReset} >새로고침</div>
+    <button onClick={ClickToReset} >새로고침</button>
   )
 }
 

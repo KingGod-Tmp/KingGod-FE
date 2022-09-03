@@ -5,25 +5,27 @@ import { FlexRowDiv } from "../../../../styles/layouts";
 import UnitCell from "./UnitCell";
 
 const UnitReadyBox = () => {
-  // const unitList = useAppSelector((state))
-
-
+  const unitList = useAppSelector((state) => state.units.units);
+  console.log(unitList)
+  const readyUnitList = unitList.filter((val)=>!val.position)
+  console.log(readyUnitList)
 
   return (
     <ReadyBox>
-      {Array(12)
-        .fill(0)
-        .map((val, idx) => {
-          return <UnitCell />;
-        })}
+      {readyUnitList.map((val, idx) => {
+        return <UnitCell val={val} />;
+      })}
+      {Array(12-readyUnitList.length).fill(0).map((val, idx) => {
+        return <UnitCell />;
+      })}
     </ReadyBox>
   );
 };
 
 const ReadyBox = styled(FlexRowDiv)`
-justify-content:center;
-flex-wrap: wrap;
-padding: 5px;
-`
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5px;
+`;
 
 export default UnitReadyBox;

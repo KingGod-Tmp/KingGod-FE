@@ -28,7 +28,7 @@ const ServiceSection = styled(FlexColumnDiv)`
 const BottomButtonBar = styled(FlexRowDiv)`
   height: 60px;
 
-  margin-top: 20px;
+  margin-top: 0px;
 
   background-color: black;
   color: #fff;

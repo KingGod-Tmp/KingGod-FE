@@ -6,10 +6,11 @@ import {
   import thunk from "redux-thunk";
   
   //import modules
+  import units from "./modules/units"
   
   const middlewares = [thunk];
   const enhancer = applyMiddleware(...middlewares);
-  const rootReducer = combineReducers({  });
+  const rootReducer = combineReducers({ units });
   
   const store = createStore(rootReducer, enhancer);
   export type RootState = ReturnType<typeof store.getState>

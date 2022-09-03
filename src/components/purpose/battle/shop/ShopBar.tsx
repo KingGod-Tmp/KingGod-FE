@@ -1,28 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { useRandomInt } from "../../../../hooks/useRandomInt";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { resetShopDataMW } from "../../../../redux/modules/shop";
 import { FlexRowDiv } from "../../../../styles/layouts";
 import BattleShopRecycle from "../../../layouts/buttons/BattleShopRecycle";
-import StageTileCell from "../stage/StageTileCell";
+import UnitCell from "../units/UnitCell";
 
 const ShopAndSearch = () => {
-  const RANDOM_ROLE = useRandomInt(0,4);
-  const RANDOM_STAR = useRandomInt(0,4); 
-  console.log(RANDOM_ROLE,RANDOM_STAR)
+  const dispatch = useAppDispatch()
+  React.useEffect(()=>{
+    dispatch(resetShopDataMW())
+  },[])
 
-
+  const shopList = useAppSelector((state)=>state.shop.shopList)
 
   return (
     <ShopBox>
+      <UnitCell val={shopList[0]} />
       <BattleShopRecycle />
-      <StageTileCell/>
+      <UnitCell val={shopList[1]} />
     </ShopBox>
   );
 };
 
 const ShopBox = styled(FlexRowDiv)`
-  height: 50px;
-  justify-content: start;
+  height: 60px;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   padding: 5px;

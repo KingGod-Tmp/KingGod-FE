@@ -20,7 +20,7 @@ const MainPageBody = () => {
 }
 
 const HeroListSection = styled.div`
-  height: auto;
+  height: 100%;
   width: 100%;
 `
 

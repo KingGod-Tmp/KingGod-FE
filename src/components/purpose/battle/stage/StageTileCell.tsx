@@ -4,7 +4,7 @@ import { FlexColumnDiv } from "../../../../styles/layouts";
 import { unit } from "../../../../types/unit";
 
 type GreetingsProps = {
-  val: unit;
+  val?: unit;
 };
 
 const StageTileCell = ({ val }: GreetingsProps) => {

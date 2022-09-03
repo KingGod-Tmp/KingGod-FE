@@ -1,20 +1,27 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+
 import "./App.css";
+import ServicePlace from "./components/ServicePlace";
 import WebPlaceHolder from "./components/WebPlaceHolder";
-import BattlePage from "./pages/BattlePage";
-import MainPage from "./pages/MainPage";
+
 
 function App() {
   return (
-    <div className="App">
+    <AppMain className="App">
       <WebPlaceHolder />
-      <Routes>
-        <Route index element={<MainPage />} />
-        <Route path="/battle/:round" element={<BattlePage />} />
-      </Routes>
-    </div>
+      <ServicePlace />
+    </AppMain>
   );
 }
+
+const AppMain = styled.div`
+  width:100vw;
+  height:100vh;
+
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+`
 
 export default App;

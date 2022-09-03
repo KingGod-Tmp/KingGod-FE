@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+import { FlexColumnDiv } from "../../../styles/layouts";
+import StageCard from "../../purpose/battle/stage/StageCard";
+import BattleTimmer from "../../purpose/BattleTimmer";
 
 const BattlePageBody = () => {
   return (
-    <div>전투 메인 페이지</div>
-  )
-}
+    <TimerAndStage>
+      <BattleTimmer />
+      <StageCard />
+    </TimerAndStage>
+  );
+};
 
-export default BattlePageBody
+const TimerAndStage = styled(FlexColumnDiv)`
+  height: 90%;
+  justify-content: space-around;
+`;
+
+export default BattlePageBody;

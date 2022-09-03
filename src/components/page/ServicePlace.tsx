@@ -13,7 +13,7 @@ const ServicePlace = () => {
         <Route index element={<MainPage />} />
         <Route path="/battle/:round" element={<BattlePage />} />
       </Routes>
-      <BottomButtonBar>대충 버튼 세개 있는 바</BottomButtonBar>
+      {/* <BottomButtonBar>대충 버튼 세개 있는 바</BottomButtonBar> */}
     </ServiceSection>
   );
 };
@@ -28,7 +28,7 @@ const ServiceSection = styled(FlexColumnDiv)`
 const BottomButtonBar = styled(FlexRowDiv)`
   height: 60px;
 
-  margin-top: 20px;
+  margin-top: 0px;
 
   background-color: black;
   color: #fff;

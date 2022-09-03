@@ -1,9 +1,21 @@
 import React from 'react'
+import styled from "styled-components";
 
 const MainPageHeader = () => {
   return (
-    <div>전투 메인 페이지</div>
+    <MainPageHeaderBox>
+      <span>💰50</span>
+    </MainPageHeaderBox>
   )
 }
+
+const MainPageHeaderBox = styled.div`
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #42855B;
+`
 
 export default MainPageHeader

@@ -10,7 +10,7 @@ const StageTileLine = ({ line }: GreetingsProps) => {
   return (
     <FlexRowDiv>
       {line.map((val, idx) => {
-        return <StageTile tile={val} />;
+        return <StageTile key={"StageTile"+idx} tile={val} />;
       })}
     </FlexRowDiv>
   );

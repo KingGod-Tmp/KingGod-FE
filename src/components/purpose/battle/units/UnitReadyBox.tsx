@@ -6,18 +6,20 @@ import UnitCell from "./UnitCell";
 
 const UnitReadyBox = () => {
   const unitList = useAppSelector((state) => state.units.units);
-  console.log(unitList)
-  const readyUnitList = unitList.filter((val)=>!val.position)
-  console.log(readyUnitList)
+  console.log(unitList);
+  const readyUnitList = unitList.filter((val) => !val.position);
+  console.log(readyUnitList);
 
   return (
     <ReadyBox>
       {readyUnitList.map((val, idx) => {
-        return <UnitCell val={val} />;
+        return <UnitCell key={"readyUnitListCell" + idx} val={val} />;
       })}
-      {Array(12-readyUnitList.length).fill(0).map((val, idx) => {
-        return <UnitCell />;
-      })}
+      {Array(12 - readyUnitList.length)
+        .fill(0)
+        .map((val, idx) => {
+          return <UnitCell key={"NullUnitCell" + idx} />;
+        })}
     </ReadyBox>
   );
 };

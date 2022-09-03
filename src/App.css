@@ -1,6 +1,6 @@
 /* 테스트용 보더 */
 div {
-  border:1px solid black;
+  outline: 1px solid black;
 }
 
 .App {

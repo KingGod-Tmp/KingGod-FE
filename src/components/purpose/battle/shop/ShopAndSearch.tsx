@@ -21,6 +21,7 @@ const ShopBox = styled(FlexRowDiv)`
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 5px;
+  margin:10px;
 `;
 
 export default ShopAndSearch;

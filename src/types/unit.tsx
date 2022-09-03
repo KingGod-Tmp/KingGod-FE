@@ -1,6 +1,6 @@
 import { hero } from "./hero"
 
-type posit = [number, number];
+type posit = {x:number, y:number};
 
 export type unit = {
   unitId: number;

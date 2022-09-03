@@ -1,9 +1,10 @@
 import React from "react";
 import { FlexRowDiv } from "../../../../styles/layouts";
+import { tileLine } from "../../../../types/tile";
 import StageTile from "./StageTile";
 
 type GreetingsProps = {
-  line: number[];
+  line: tileLine;
 };
 
 const StageTileLine = ({ line }: GreetingsProps) => {

@@ -1,4 +1,5 @@
 import { unit, units } from "../../types/unit";
+import { resetShopDataMW } from "./shop";
 
 // Actions
 export const SET = "unit/SET" as const;
@@ -58,7 +59,11 @@ export function awayUnitData(unitId: number) {
 // Action MiddleWare
 export const keepUnitDataMW = (unit: unit) => {
   return function (dispatch: any) {
-    dispatch(keepUnitData(unit));
+    const tmpUnit = {
+      ...unit,
+    }
+    dispatch(keepUnitData(tmpUnit));
+    dispatch(resetShopDataMW())
   };
 };
 

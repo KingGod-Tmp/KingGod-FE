@@ -13,7 +13,7 @@ const ServicePlace = () => {
         <Route index element={<MainPage />} />
         <Route path="/battle/:round" element={<BattlePage />} />
       </Routes>
-      <BottomButtonBar>대충 버튼 세개 있는 바</BottomButtonBar>
+      {/* <BottomButtonBar>대충 버튼 세개 있는 바</BottomButtonBar> */}
     </ServiceSection>
   );
 };

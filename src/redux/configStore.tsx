@@ -7,10 +7,11 @@ import {
   
   //import modules
   import units from "./modules/units"
+  import hero from "./modules/hero"
   
   const middlewares = [thunk];
   const enhancer = applyMiddleware(...middlewares);
-  const rootReducer = combineReducers({ units });
+  const rootReducer = combineReducers({ units, hero });
   
   const store = createStore(rootReducer, enhancer);
   export type RootState = ReturnType<typeof store.getState>

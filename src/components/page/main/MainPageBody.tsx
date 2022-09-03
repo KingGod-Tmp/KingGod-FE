@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useAppSelector } from "../../../redux/hooks";
+import { hero } from "../../../types/hero";
 import HeroBox from "../../main/HeroBox";
 
-const HEROES: string[] = ["전사", "도적", "주술사", "도사", "궁사"];
-
 const MainPageBody = () => {
+  const heroes = useAppSelector(state => state.hero.heroes)
   return (
     <HeroListSection>
-      {HEROES.map((hero: string, idx) => {
-        return <HeroBox key={"HeroBox" + idx} name={hero} />;
+      {heroes.map((hero: hero, idx) => {
+        return <HeroBox key={"HeroBox" + idx} name={hero.name} level={hero.level}/>;
       })}
     </HeroListSection>
   );

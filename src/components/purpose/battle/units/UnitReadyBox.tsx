@@ -6,9 +6,7 @@ import UnitCell from "./UnitCell";
 
 const UnitReadyBox = () => {
   const unitList = useAppSelector((state) => state.units.units);
-  console.log(unitList);
   const readyUnitList = unitList.filter((val) => !val.position);
-  console.log(readyUnitList);
 
   return (
     <ReadyBox>

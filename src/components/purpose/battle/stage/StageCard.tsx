@@ -8,10 +8,9 @@ import StageTileLine from "./StageTileLine";
 const StageCard = () => {
   const unitList = useAppSelector((state) => state.units.units);
   const fightUnitList = unitList.filter((val) => val.position);
-  console.log(fightUnitList)
-  
+
   //0은 빈공간 1은 장애물
-  const mapTile:manyTileLine = [
+  const mapTile: manyTileLine = [
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
@@ -20,14 +19,16 @@ const StageCard = () => {
     [0, 1, 0, 0, 0],
   ];
 
-  const readyTile:manyTileLine = [
+  const readyTile: manyTileLine = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
   ];
 
- readyTile[(fightUnitList[0].position.x)][(fightUnitList[0].position.y)] = fightUnitList[0]
- console.log(readyTile)
+  for (let i = 0; i < fightUnitList.length; i++) {
+    readyTile[fightUnitList[i].position.x][fightUnitList[i].position.y] =
+      fightUnitList[i];
+  }
 
   return (
     <StageBox>

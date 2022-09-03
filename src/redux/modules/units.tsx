@@ -17,26 +17,22 @@ const initialState: UnitState = {
     {
       unitId: 0,
       unitName: "전사",
-      level: 3,
       star: 1,
     },
     {
       unitId: 1,
       unitName: "전사",
-      level: 3,
       star: 1,
     },
     {
       unitId: 2,
       unitName: "궁수",
-      level: 2,
       star: 2,
       position: { x: 0, y: 1 },
     },
     {
       unitId: 3,
       unitName: "궁수",
-      level: 2,
       star: 1,
     },
   ],

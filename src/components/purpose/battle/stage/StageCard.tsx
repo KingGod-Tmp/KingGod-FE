@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { useAppSelector } from "../../../../redux/hooks";
 import { FlexRowDiv } from "../../../../styles/layouts";
+import { manyTileLine } from "../../../../types/tile";
 import StageTileLine from "./StageTileLine";
 
 const StageCard = () => {
+  const unitList = useAppSelector((state) => state.units.units);
+  const fightUnitList = unitList.filter((val) => val.position);
+  console.log(fightUnitList)
   
   //0은 빈공간 1은 장애물
-  const mapTile = [
+  const mapTile:manyTileLine = [
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
@@ -15,11 +20,14 @@ const StageCard = () => {
     [0, 1, 0, 0, 0],
   ];
 
-  const readyTile = [
+  const readyTile:manyTileLine = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
   ];
+
+ readyTile[(fightUnitList[0].position.x)][(fightUnitList[0].position.y)] = fightUnitList[0]
+ console.log(readyTile)
 
   return (
     <StageBox>

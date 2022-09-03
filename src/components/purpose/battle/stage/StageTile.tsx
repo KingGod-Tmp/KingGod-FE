@@ -1,21 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { FlexColumnDiv } from "../../../../styles/layouts";
+import { tile } from "../../../../types/tile";
 import StageTileCell from "./StageTileCell";
 import StageTileWall from "./StageTileWall";
 
 type GreetingsProps = {
-  tile: number;
+  tile: tile;
 };
 
 const StageTile = ({ tile }: GreetingsProps) => {
+  console.log(typeof tile);
   return (
     <StageTileBox>
-      {tile == 1 ? <StageTileWall /> : <StageTileCell />}
+      {typeof tile == "number" ? (
+        !(tile == 0) && <StageTileWall />
+      ) : (
+        <StageTileCell val={tile} />
+      )}
     </StageTileBox>
   );
 };
 
-const StageTileBox = styled.div`
+const StageTileBox = styled(FlexColumnDiv)`
+justify-content:center;
   width: 50px;
   height: 50px;
   margin: 5px;

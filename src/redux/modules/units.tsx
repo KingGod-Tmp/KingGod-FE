@@ -31,7 +31,7 @@ const initialState: UnitState = {
       unitName: "궁수",
       level: 2,
       star: 2,
-      position: [0,1],
+      position: { x: 0, y: 1 },
     },
     {
       unitId: 3,

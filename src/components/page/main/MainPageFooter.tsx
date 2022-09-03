@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const MainPageFooter = () => {
   return (
-    <MainPageFooterBox><button><a href="/battle">전투 시작</a></button></MainPageFooterBox>
+    <MainPageFooterBox><button><a href="/battle/fdg">전투 시작</a></button></MainPageFooterBox>
   )
 }
 

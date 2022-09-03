@@ -43,7 +43,7 @@ const initialState: UnitState = {
 };
 
 // Action Function
-function setUnitData() {
+export function setUnitData() {
   return { type: SET };
 }
 
@@ -51,22 +51,22 @@ function setUnitData() {
 //   return { type: LOAD, units:units}
 // }
 
-function keepUnitData(unit: unit) {
+export function keepUnitData(unit: unit) {
   return { type: KEEP, units: unit };
 }
 
-function awayUnitData(unitId: number) {
+export function awayUnitData(unitId: number) {
   return { type: AWAY, unitId: unitId };
 }
 
 // Action MiddleWare
-const keepUnitDataMW = (unit: unit) => {
+export const keepUnitDataMW = (unit: unit) => {
   return function (dispatch: any) {
     dispatch(keepUnitData(unit));
   };
 };
 
-const awayUnitDataMW = (unitId: number) => {
+export const awayUnitDataMW = (unitId: number) => {
   return function (dispatch: any) {
     dispatch(awayUnitData(unitId));
   };

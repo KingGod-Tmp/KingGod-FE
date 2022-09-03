@@ -5,4 +5,6 @@ export type hero = {
     ability: number
     defense: number
     resistence: number
+    health: number
+    mana: number
 }

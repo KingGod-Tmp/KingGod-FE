@@ -1,9 +1,10 @@
+import { hero } from "./hero"
+
 type posit = [number, number];
 
 export type unit = {
   unitId: number;
-  unitName: string;
-  level: number;
+  unitName: hero["name"]
   star: number;
   position?: posit;
 };

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import "./App.css";
-import ServicePlace from "./components/ServicePlace";
-import WebPlaceHolder from "./components/WebPlaceHolder";
+import ServicePlace from "./components/page/ServicePlace";
+import WebPlaceHolder from "./components/page/WebPlaceHolder";
 
 
 function App() {

@@ -1,10 +1,10 @@
-import { hero } from "./hero"
+import { hero } from "./hero";
 
-type posit = {x:number, y:number};
+export type posit = { x: number | undefined; y: number | undefined };
 
 export type unit = {
   unitId?: number;
-  unitName: hero["name"]
+  unitName: hero["name"];
   star: number;
   position?: posit;
 };

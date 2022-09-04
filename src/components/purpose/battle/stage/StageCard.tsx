@@ -35,13 +35,22 @@ const StageCard = () => {
       {/* 적군 준비 자리 */}
       <EnemyZone>
         {mapTile.map((val, idx) => {
-          return <StageTileLine key={"StageTileLine" + idx} line={val} />;
+          return (
+            <StageTileLine key={"StageTileLine" + idx} line={val} y={idx} />
+          );
         })}
       </EnemyZone>
       {/* 아군 준비 자리 */}
       <FriendlyZone>
         {readyTile.map((val, idx) => {
-          return <StageTileLine key={"StageTileLine" + idx} line={val} />;
+          return (
+            <StageTileLine
+              key={"StageTileLine" + idx}
+              line={val}
+              y={idx}
+              friendly
+            />
+          );
         })}
       </FriendlyZone>
     </StageBox>

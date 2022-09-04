@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { FlexColumnDiv } from "../../../../styles/layouts";
+import { useAppSelector } from "../../../../redux/hooks";
+import { FlexColumnDiv, HiddenDiv } from "../../../../styles/layouts";
 import { unit } from "../../../../types/unit";
 
 type GreetingsProps = {
   val?: unit;
+  selectable?: boolean;
+  y?: number;
+  x?: number;
 };
 
-const StageTileCell = ({ val }: GreetingsProps) => {
+const StageTileCell = ({ val, selectable, x, y }: GreetingsProps) => {
   return (
     <>
       {val && (
@@ -16,6 +20,9 @@ const StageTileCell = ({ val }: GreetingsProps) => {
           <div>{val?.unitName}</div>
         </>
       )}
+      <HiddenDiv>
+        {x} , {y}
+      </HiddenDiv>
     </>
   );
 };

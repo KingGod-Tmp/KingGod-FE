@@ -10,13 +10,14 @@ const UnitReadyBox = () => {
 
   return (
     <ReadyBox>
-      {readyUnitList.map((val, idx) => {
-        return <UnitCell key={"readyUnitListCell" + idx} val={val} />;
-      })}
+      {readyUnitList &&
+        readyUnitList.map((val, idx) => {
+          return <UnitCell key={"readyUnitListCell" + idx} val={val} ready />;
+        })}
       {Array(12 - readyUnitList.length)
         .fill(0)
         .map((val, idx) => {
-          return <UnitCell key={"NullUnitCell" + idx} />;
+          return <UnitCell key={"NullUnitCell" + idx} shop/>;
         })}
     </ReadyBox>
   );

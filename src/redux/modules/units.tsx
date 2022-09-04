@@ -14,39 +14,13 @@ type UnitState = {
 };
 
 const initialState: UnitState = {
-  units: [
-    {
-      unitId: 0,
-      unitName: "전사",
-      star: 1,
-    },
-    {
-      unitId: 1,
-      unitName: "전사",
-      star: 1,
-    },
-    {
-      unitId: 2,
-      unitName: "궁수",
-      star: 2,
-      position: { x: 0, y: 1 },
-    },
-    {
-      unitId: 3,
-      unitName: "궁수",
-      star: 1,
-    },
-  ],
+  units: [],
 };
 
 // Action Function
 export function setUnitData() {
   return { type: SET };
 }
-
-// function loadUnitData(units:unit[]) {
-//   return { type: LOAD, units:units}
-// }
 
 export function keepUnitData(unit: unit) {
   return { type: KEEP, units: unit };
@@ -69,6 +43,7 @@ export const keepUnitDataMW = (unit: unit) => {
 
 export const awayUnitDataMW = (unitId: number) => {
   return function (dispatch: any) {
+    console.log('삭제 접수 됨',unitId)
     dispatch(awayUnitData(unitId));
   };
 };
@@ -92,6 +67,7 @@ export default function reducer(state = initialState, action: any = {}) {
       let newUnits = state.units.filter(
         (val, idx) => val.unitId != action.unitId
       );
+      console.log(newUnits)
       return { units: newUnits };
     }
     // do reducer stuff

@@ -36,7 +36,7 @@ const StageCard = () => {
       <EnemyZone>
         {mapTile.map((val, idx) => {
           return (
-            <StageTileLine key={"StageTileLine" + idx} line={val} idx={idx} />
+            <StageTileLine key={"StageTileLine" + idx} line={val} y={idx} />
           );
         })}
       </EnemyZone>
@@ -44,7 +44,12 @@ const StageCard = () => {
       <FriendlyZone>
         {readyTile.map((val, idx) => {
           return (
-            <StageTileLine key={"StageTileLine" + idx} line={val} idx={idx} />
+            <StageTileLine
+              key={"StageTileLine" + idx}
+              line={val}
+              y={idx}
+              friendly
+            />
           );
         })}
       </FriendlyZone>

@@ -5,14 +5,15 @@ import StageTile from "./StageTile";
 
 type GreetingsProps = {
   line: tileLine;
-  idx: number;
+  y: number;
+  friendly?: boolean;
 };
 
-const StageTileLine = ({ line, idx }: GreetingsProps) => {
+const StageTileLine = ({ line, y, friendly }: GreetingsProps) => {
   return (
     <FlexRowDiv>
       {line.map((val, idx) => {
-        return <StageTile key={"StageTile" + idx} tile={val} />;
+        return <StageTile key={"StageTile" + idx} tile={val} y={y} x={idx} friendly={friendly} />;
       })}
     </FlexRowDiv>
   );

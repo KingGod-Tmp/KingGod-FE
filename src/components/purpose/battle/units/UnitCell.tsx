@@ -9,13 +9,15 @@ type GreetingsProps = {
   val?: unit;
   ready?: boolean;
   shop?: boolean;
+  field?: boolean;
 };
 
-const UnitCell = ({ val, ready, shop }: GreetingsProps) => {
+const UnitCell = ({ val, ready, shop, field }: GreetingsProps) => {
   const dispatch = useAppDispatch();
   const UnitCellRef = React.useRef<HTMLDivElement>(null);
 
-  const clickToSelect = () => {
+  const clickToSelect = (e:any) => {
+    e.stopPropagation()
     console.log("눌림");
     const unitData = UnitCellRef.current?.innerText.split("\n");
 
@@ -63,11 +65,20 @@ const UnitCell = ({ val, ready, shop }: GreetingsProps) => {
           )}
         </UnitCellBox>
       )}
+      {field && (
+        <UnitCellBox ref={UnitCellRef} style={{ margin: "0px" }}>
+          {val && (
+            <>
+              <HiddenDiv>{val.unitId}</HiddenDiv>
+              <div>{`${val?.star}성`}</div>
+              <div>{val?.unitName}</div>
+            </>
+          )}
+        </UnitCellBox>
+      )}
     </>
   );
 };
-
-
 
 const UnitCellBox = styled(FlexColumnDiv)`
   justify-content: center;

@@ -1,6 +1,6 @@
-import { hero } from "./hero"
+import { hero } from "./hero";
 
-type posit = {x:number|null, y:number|null};
+export type posit = { x: number | undefined; y: number | undefined };
 
 export type unit = {
   unitId?: number;

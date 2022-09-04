@@ -13,7 +13,7 @@ type UnitState = {
 
 const initialState: UnitState = {
   isSelected: false,
-  selected: { unitName: "", star: 0, position: { x: null, y: null } },
+  selected: { unitName: "", star: 0, position: { x: undefined, y: undefined } },
 };
 
 // Action Function

@@ -44,6 +44,9 @@ const StageTile = ({ tile, friendly, x, y }: GreetingsProps) => {
             boxShadow: `${
               selected.isSelected ? "0px 0px 2px 2px black" : "none"
             }`,
+            cursor: `${
+              selected.isSelected ? "pointer" : "inherit"
+            }`,
           }}
         >
           {typeof tile == "number" ? (
